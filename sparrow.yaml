@@ -1,5 +1,6 @@
 image:
   - melezhik/sparrow:debian
+  - melezhik/sparrow:arch
 tasks:
   -
     name: main
@@ -80,5 +81,10 @@ tasks:
     name: install-deps
     language: Bash
     code: |
-      sudo apt-get install -yq time build-essential 
+      if test $os = "arch"; then
+        sudo pacman -Sy base-devel time
+      else
+        sudo apt-get install -yq time build-essential 
+      fi
+      
       zef install --/test Text::Table::Simple
