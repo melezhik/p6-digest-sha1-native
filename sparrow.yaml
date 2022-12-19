@@ -1,6 +1,6 @@
 image:
   - melezhik/sparrow:debian
-  - melezhik/sparrow:arch
+  - melezhik/sparrow:archlinux
 tasks:
   -
     name: main
